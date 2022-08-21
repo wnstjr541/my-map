@@ -1,0 +1,24 @@
+.recomHomeContainer{
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 100px;
+}
+.recomHomeContainer > .mapRegistWarp{
+    width: 80%;
+    position: absolute;
+    height: calc(100vh - 100px);
+    bottom: 0;
+    left: 20%;
+}
+.recomHomeContainer > .recomInfoWarp{
+    width: 20%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #000;
+}
+.recomHomeContainer > .recomInfoWarp > div{
+    margin: 0;
+    width: 100%;
+}

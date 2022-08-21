@@ -1,0 +1,75 @@
+
+.recomeHeader { 
+    box-sizing:border-box; 
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.recomeHeader h1 {height:60px; position:relative;}
+.recomeHeader h1 a {color:#11264B; display:block; height:60px; left:20px; width:109px; position:absolute;}
+.recomeHeader h1 a img {height:14px; position:absolute; top:50%; transform:translateY(-50%); width:32px;}
+.recomeHeader h1 a span { color:#11264B; font-size:16px; line-height:60px; left:36px; position:absolute; top:50%; transform:translateY(-50%);}
+
+.recomeHeader #search { 
+    width: 100%;
+    height: 80px;
+    margin: 20px auto;
+    position: relative;
+
+    background:rgba(255, 255, 255, 0.7);
+    font-size:12px;
+    border-radius: 10px;  
+    box-sizing: border-box;
+}
+
+.inputBox{ 
+    box-sizing: border-box;
+    display: block;
+    height: 60px;
+    padding: 2px;
+    position:relative;
+    border: 3px solid #3D85F0;
+}
+
+.inputText{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 80%;
+    border: none;
+    background: #fff;
+    outline: none;
+    height:32px;
+    line-height:32px;
+    left : 20px
+}
+
+.searchIcon {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+
+    border: none;
+    background: none;
+    width:40px;
+    height:40px;
+    cursor:pointer; 
+    color: #3D85F0;
+}
+
+.searchIcon svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+@media (max-width:1023px) {
+    .recomeHeader #search { 
+        right: 10;
+        transform: translateX(0);
+        top: 0;
+    }
+}

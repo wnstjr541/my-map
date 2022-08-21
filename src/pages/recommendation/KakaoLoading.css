@@ -1,0 +1,19 @@
+.LoadingContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(183, 183, 183);
+    opacity: 0.5;
+    z-index: 99999;
+}
+
+.LoadingContainer > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
