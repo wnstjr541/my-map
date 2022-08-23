@@ -6,7 +6,7 @@
 /* 정보창 */
 .infoWindowContainer > .leftInfo {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 100px);
     position: absolute;
     background: #fff;
     z-index: 1;
@@ -23,26 +23,16 @@
     height: 50px;
 }
 /* 검색 목록 */
-.infoWindowContainer > .rightInfo {
-    position: absolute;
-    width: 300px;
-    left: 270px;
-    top: 0;
-    height: 100%;
-}
-
-.infoWindowContainer > .rightInfo > ul{
-    position: relative;
+.infoWindowContainer > .leftInfo> .rightInfo {
     width: 100%;
-    height: 100%;
-    border-left: none;
+    height: 500px;
     overflow-y: scroll;
     -ms-overflow-style: none;
-    z-index: 1;
-    background: #fff;
+
 }
-.infoWindowContainer > .rightInfo > ul::-webkit-scrollbar{ display:none; }
-.infoWindowContainer > .rightInfo > ul >li{
+
+.infoWindowContainer > .leftInfo> .rightInfo > ul::-webkit-scrollbar{ display:none; }
+.infoWindowContainer > .leftInfo> .rightInfo > ul >li{
     height: 80px;
     width: auto;
     margin: 10px 0;
@@ -52,11 +42,11 @@
     padding: 5px;
 
 }
-.infoWindowContainer > .rightInfo > ul >li > span{
+.infoWindowContainer > .leftInfo> .rightInfo > ul >li > span{
     display: inline-block;
     width: 100%;
 }
-.infoWindowContainer > .rightInfo > button:nth-child(1){
+.infoWindowContainer > .leftInfo> .rightInfo > button:nth-child(1){
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -67,7 +57,7 @@
     background: #ccc;
     z-index: 1;
 } 
-.infoWindowContainer > .rightInfo > button:nth-child(2) {
+.infoWindowContainer > .leftInfo> .rightInfo > button:nth-child(2) {
     display: inline-block;
     position: absolute;
     top: 50%;

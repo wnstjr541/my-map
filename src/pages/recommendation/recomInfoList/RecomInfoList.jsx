@@ -1,7 +1,7 @@
 import React , {useEffect} from 'react';
 import './RecomInfoList.css'
 
-const RecomInfoList = ({data , setListClickAddress , setListClickRoadAddress ,  setSearchType , searchType}) => {
+const RecomInfoList = ({ data,  setListClickRoadAddress ,  setSearchType }) => {
     const test = (e) => {
         if(e.target.className.indexOf('recomAddress') < 0) {
             return;
@@ -12,12 +12,13 @@ const RecomInfoList = ({data , setListClickAddress , setListClickRoadAddress ,  
         const roadSplit = li.innerText.split("지번 : ")[0]
         setListClickRoadAddress(roadSplit.split("도로명 : ")[1])
         // 지번
-        setListClickAddress(li.innerText.split("지번 : ")[1])
+        // setListClickAddress(li.innerText.split("지번 : ")[1])
         setSearchType('list')
     }
     return (
             <li>
                 <span onClick={test} className="recomAddress" >
+                    {data?.address_name}
                 </span> 
             </li>
     );

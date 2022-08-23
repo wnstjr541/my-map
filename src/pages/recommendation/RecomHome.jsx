@@ -21,8 +21,6 @@ const RecomHome = () => {
     // 검색 데이터
     const [searchData, setSearchData] = useState()
 
-    // 랜드북 데이터
-    // const [rendData, setRendData] = useState()
     // 검색 타입
     const [searchType, setSearchType] = useState(null);
     // 검색시 최상단 주소값
@@ -32,7 +30,6 @@ const RecomHome = () => {
     // 모달 등록버튼 눌렀을때만 나오고, 나머지 조건은 전부 true
     const [kakaoModalToggle, setKakaoModalToggle] = useState(false)
     
-    console.log(searchData) 
 
     // 로딩
     const [kakaoModalLoading,setKakaoModalLoading] = useState(false)
@@ -56,10 +53,9 @@ const RecomHome = () => {
                     <RecomMap
                         setKakaoStreetAddress={setKakaoStreetAddress} 
                         setKakaoLandAddress={setKakaoLandAddress}
-                        keyword={keyword}
                         setSearchType={setSearchType}
                         searchType={searchType}
-                        // setSearchData={setSearchData}
+                        searchData={searchData}
                     >
                     </RecomMap>
             </article>
@@ -84,6 +80,7 @@ const RecomHome = () => {
                         // 검색시 받는값
                         setSearchType={setSearchType}
                         searchType={searchType}
+                        searchData={searchData}
                     >
                     </RecomInfoWindow>
                 </div>
