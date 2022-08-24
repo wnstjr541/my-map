@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import './RecomMap.css';
 import KakaoMap from './KakaoMap';
 
-const RecomMap = ({ searchType, setSearchType ,  setKakaoStreetAddress , setKakaoLandAddress , searchData }) => {
-    
+const RecomMap = ({ searchType, setSearchType ,  setKakaoStreetAddress , setKakaoLandAddress , searchData , keyword }) => {
+
     useEffect(() => {
-        KakaoMap( searchType,setSearchType ,  setKakaoStreetAddress , setKakaoLandAddress ,searchData);
-    }, [setSearchType ,  setKakaoStreetAddress , setKakaoLandAddress , searchData ]);
+        KakaoMap( searchType,setSearchType ,  setKakaoStreetAddress , setKakaoLandAddress ,searchData , keyword);
+    }, [  keyword , searchData , setSearchType]);
 
     return (
         <div>

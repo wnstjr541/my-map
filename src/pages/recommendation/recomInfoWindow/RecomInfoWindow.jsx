@@ -30,7 +30,6 @@ const RecomInfoWindow = ({
     //     }
     // } , [searchData , searchType , keyword])
 
-    console.log(Array.isArray(searchData?.data) === true)
 
     return (
         <section className='infoWindowContainer'>
@@ -45,7 +44,7 @@ const RecomInfoWindow = ({
                 <button onClick={recomModal} className="infoSendBtn">등록</button>
                 <div className={( searchType === "search") ? 'rightInfo' : 'rightInfoNone'}>
                     {/* 버튼 누르기 전 검색 하고 난 후 */}
-                    {infoToggle === false ?
+                    {
                         <>
                             <ul>
                                 {  
@@ -53,18 +52,13 @@ const RecomInfoWindow = ({
                                         searchData?.data?.map((data,idx) =>
                                             <RecomInfoList data={data} key={idx} setListClickRoadAddress={setListClickRoadAddress}  setSearchType={setSearchType}></RecomInfoList>)
                                             :
-                                            <RecomInfoList data={searchData?.data} setListClickRoadAddress={setListClickRoadAddress} setSearchType={setSearchType} searchType={searchType}></RecomInfoList>
+                                            <RecomInfoList data={searchData?.data} setListClickRoadAddress={setListClickRoadAddress} setSearchType={setSearchType} searchType={searchType}
+                                            >
+
+                                            </RecomInfoList>
                                 }
                             </ul>
-                            <button type="submit" className="historyLeftBtn" onClick={recomBtn}>
-                                <FontAwesomeIcon icon={faChevronLeft}/>
-                            </button> 
                         </>
-                        :
-                        (infoToggle === true && (kakaoSearchAddress !== undefined)) === true &&
-                        <button type="submit" className="historyRightBtn" onClick={recomBtn}>
-                            <FontAwesomeIcon icon={faChevronRight}/>
-                        </button>
                     } 
                 </div>
             </div>
