@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from 'react';
 import './RecomHeader.css'
 
-const RecomHeader = ({setKeyword ,  setKakaoModalToggle , setSearchType}) => {
+const RecomHeader = ({setKeyword ,   setSearchType}) => {
     const keywordRef = useRef();
 
     const kakaoSearchBtn = () => {
@@ -13,8 +13,6 @@ const RecomHeader = ({setKeyword ,  setKakaoModalToggle , setSearchType}) => {
         }
         // 클릭 버튼 클릭 후 Map 컴포넌트에 검색어와 검색 타입 전달
         setKeyword(keywordRef.current.value);
-        // 검색했을때 목록 클릭한 주소값을 초기화해준다.
-        setKakaoModalToggle(true)
         // 타입을 search로 설정해 다른 이벤트들을 조절한다.
         setSearchType('search')
     }

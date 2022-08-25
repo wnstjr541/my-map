@@ -43,7 +43,8 @@ export default function kakaoMap(searchType ,setSearchType , setKakaoStreetAddre
             }   
         });
     });
-    if(keyword !== '' ){
+
+    if(keyword !== '' && searchData?.data ){
         kakaoMapPanTo(map, searchData?.data?.length  ? Number(searchData?.data[0]?.y) :  Number(searchData?.data?.y) , searchData?.data?.length ? Number(searchData?.data[0]?.x) :  Number(searchData?.data?.x));
     }
 

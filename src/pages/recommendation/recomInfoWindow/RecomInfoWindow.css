@@ -1,3 +1,11 @@
+hr{
+    height: 15px;
+    width: 100%;
+    border: none;
+    background-color: rgb(238, 239, 240);
+    opacity: 1;
+}
+
 .infoWindowContainer{
     width: 100%;
     height: calc(100vh - 100px);
@@ -15,63 +23,80 @@
 .rightInfoNone{
     display: none;
 }
+
+/* 주소 창 */
+.infoWindowContainer > .leftInfo > .infoTitle{
+    height: 10%;
+    background:  linear-gradient(117.98deg, rgb(0, 75, 180) 25%, rgb(108, 180, 250) 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoWindowContainer > .leftInfo > .infoTitle > h1{
+    font-weight: 700;
+    font-size: 23px;
+    color: rgb(214, 236, 255);
+}
+
+/* 클릭했을시 담기는 값 */
 .infoWindowContainer > .leftInfo >ul{
     padding: 20px;
-    margin-top: 50px;
+    display: inline-block;
+    height: 20%;
 }
 .infoWindowContainer > .leftInfo > ul >li{
     height: 50px;
+    margin-bottom: 20px;
 }
 /* 검색 목록 */
-.infoWindowContainer > .leftInfo> .rightInfo {
+.infoWindowContainer > .leftInfo > .rightInfo {
     width: 100%;
-    height: 35vh;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-
+    height: calc(70% - 15px);
+    overflow: auto;
+}
+.infoWindowContainer > .leftInfo > .rightInfo > .rightInfoTitle {
+    width: 100%;
+    height: calc(70% - 15px);
+    overflow: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.infoWindowContainer > .leftInfo> .rightInfo > ul::-webkit-scrollbar{ display:none; }
-.infoWindowContainer > .leftInfo> .rightInfo > ul >li{
-    height: 80px;
+.infoWindowContainer > .leftInfo > .rightInfo::-webkit-scrollbar{ 
+    width: 11px;  /* 스크롤바의 너비 */
+}
+
+
+.infoWindowContainer > .leftInfo > .rightInfo::-webkit-scrollbar-thumb {
+    height: 10%; /* 스크롤바의 길이 */
+    background: #217af4; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+.infoWindowContainer > .leftInfo > .rightInfo::-webkit-scrollbar-track {
+    background: rgba(83, 153, 250, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+
+.infoWindowContainer > .leftInfo > .rightInfo > ul {
+    width: 100%;
+}
+.infoWindowContainer > .leftInfo > .rightInfo > ul >li{
+    height: 30%;
     width: auto;
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 16px;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
-    padding: 5px;
-
+    padding: 10px;
 }
 .infoWindowContainer > .leftInfo> .rightInfo > ul >li > span{
     display: inline-block;
     width: 100%;
 }
-.infoWindowContainer > .leftInfo> .rightInfo > button:nth-child(1){
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background: #ccc;
-    z-index: 1;
-} 
-.infoWindowContainer > .leftInfo> .rightInfo > button:nth-child(2) {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 14px);
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background: #ccc;
-    z-index: 1;
-}
 
-.infoSendBtn{
-    display: inline-block;
-    width: 80%;
-    height: 30px;
-    margin: 20px
+
+.infoWindowContainer > .leftInfo > .rightInfo > h1 {
+    font-size: 20px;
 }

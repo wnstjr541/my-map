@@ -9,7 +9,7 @@ const RecomInfoList = ({ data,  setListClickRoadAddress ,  setSearchType }) => {
         // dom 의 부모 요소를 찾기 위해 closest 사용
         const li = e.target.closest('li');
         // 도로명
-        const roadSplit = li.innerText.split("지번 주소 : ")[0]
+        const roadSplit = li.innerText.split("지번 주소")[0]
         setListClickRoadAddress(roadSplit)
         // setListClickRoadAddress(li.innerText.split("도로명 주소 : ")[0])
         // 지번

@@ -7,12 +7,9 @@ import { useEffect } from 'react';
 import RecomInfoWindow from './recomInfoWindow/RecomInfoWindow';
 import './RecomHome.css'
 import { searchAddressList } from './kakaoMap/addressListUtil';
-import KakaoLoading from './KakaoLoading';
-
 
 const RecomHome = () => {
 
-    const [listClickRoadAddress , setListClickRoadAddress] = useState()
     // 도로명 주소
     const [kakaoStreetAddress , setKakaoStreetAddress] = useState()
     // 지번 주소
@@ -22,17 +19,8 @@ const RecomHome = () => {
     // 검색 데이터
     const [searchData, setSearchData] = useState()
 
-    const [test, setTest] = useState()
     // 검색 타입
     const [searchType, setSearchType] = useState(null);
-    // 검색시 최상단 주소값
-    const [kakaoSearchAddress , setKakaoSearchAddress ] = useState()
-    // 등록 눌렀을때
-    const [registModal, setRegistModal] = useState(false)
-    // 모달 등록버튼 눌렀을때만 나오고, 나머지 조건은 전부 true
-    const [kakaoModalToggle, setKakaoModalToggle] = useState(false)
-    // 로딩
-    const [kakaoModalLoading,setKakaoModalLoading] = useState(false)
 
     useEffect(  ()=>{
         // 카카오에 키워드를 보내서 검색하는 기능 해당 데이터는 page에 담긴다.
@@ -56,14 +44,13 @@ const RecomHome = () => {
         <section className='recomHomeContainer'>
             <article className='mapRegistWarp'>
                 {/* 검색시 맵클릭했을때 받아온 주소 초기화 */}
-                <RecomHeader setKeyword={setKeyword} setSearchType={setSearchType} setKakaoModalToggle ={setKakaoModalToggle }></RecomHeader>
+                <RecomHeader setKeyword={setKeyword} setSearchType={setSearchType} ></RecomHeader>
                     <RecomMap
                         setKakaoStreetAddress={setKakaoStreetAddress} 
                         setKakaoLandAddress={setKakaoLandAddress}
                         setSearchType={setSearchType}
                         searchType={searchType}
                         searchData={searchData}
-                        setTest={setTest}
                         keyword={keyword}
                     >
                     </RecomMap>
@@ -76,17 +63,6 @@ const RecomHome = () => {
                         kakaoStreetAddress = {kakaoStreetAddress}
                         kakaoLandAddress = {kakaoLandAddress}
 
-                        keyword={keyword}
-                        setListClickRoadAddress={setListClickRoadAddress}
-                        kakaoSearchAddress={kakaoSearchAddress}
-
-                        setKakaoSearchAddress={setKakaoSearchAddress}
-
-                        // 등록 눌렀을때
-                        setRegistModal={setRegistModal}
-                        // 카카오 모달 toggle
-                        setKakaoModalToggle={setKakaoModalToggle}
-
                         // 검색시 받는값
                         setSearchType={setSearchType}
                         searchType={searchType}
@@ -94,21 +70,18 @@ const RecomHome = () => {
                     >
                     </RecomInfoWindow>
                 </div>
-                {
-                    ((registModal === true ) && kakaoModalToggle=== false) && 
+                {/* {
+                    (registModal === true ) && 
                     <>
-                        {/* <KakaoClickModal 
+                        <KakaoClickModal 
                             registModal={registModal} 
                             setRegistModal={setRegistModal}
-                            retouch={retouch}
-                            setRetouch={setRetouch}
                             keyword={keyword}
                             searchType={searchType}
-                            setKakaoModalLoading={setKakaoModalLoading}
                         >
-                        </KakaoClickModal> */}
+                        </KakaoClickModal>
                     </>
-                }
+                } */}
             </article>
         </section>
     );

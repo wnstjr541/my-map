@@ -17,14 +17,7 @@ const searchAddressList =  (keyword, callback ) => {
                 status: status
             };
 
-            // let place = new kakao.maps.LatLngBounds();
-            // for (let i=0; i<data.length; i++) {
-            //     place.extend(new kakao.maps.LatLng(Number(data[i].y),Number(data[i].x)));
-            //     displayMarker(place , null)
-            // }       
-                    
             await callback(returnParams);
-            console.log(status)
         }
     });
 };
